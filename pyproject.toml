@@ -9,6 +9,7 @@ license = {text = "MIT"}
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "sqlmodel (>=0.0.22,<0.0.23)"
 ]
 
 
