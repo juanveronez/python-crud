@@ -1,4 +1,4 @@
-## SQL Model
+# 1. SQL Model
 
 O SQL Model é uma solução de **ORM** (Object Relational Mapping) moderna usada para lidarmos com SQL de forma simplificada em aplicações com Python. Com essa solução podemos interagir com tabelas SQL como se fossem classes Python, flexibilizando o uso do SQL e dando velocidade e simplicidade para criarmos aplicações.
 
@@ -8,7 +8,7 @@ Além disso tudo, ele ainda utiliza o Pydantic para validação dos objetos cria
 
 Por fim, ele utiliza como padrão um padrão de **transações atômicas, dessa forma utilizando sessões para que alterações só sejam feitas no banco com o comando de COMMIT**, dessa forma garantindo a segurança e integridade nos dados.
 
-### Exemplo de uso do SQL Model
+## Exemplo de uso do SQL Model
 
 ```py
 from typing import Optional
@@ -40,3 +40,13 @@ No exemplo acima criamos uma classe que herda de `SQLModel` e que está definida
 Para conexão com o banco é criada uma engine, usada para lidar com diferentes bancos de forma análoga. Simplificando o uso do ORM como já mencionado antes. Usando `create_engine` para tal.
 
 Além disso, para fazermos transações no banco, como um insert no banco, usamos o with para iniciar e fechar uma função, usando isso para adicionar os herois na tabela, **sendo necessário o commit dessa mudança**.
+
+# 2. SQL Alchemy
+
+O SQL Alchemy nada mais é do que uma solução completa para comunicação e uso de bancos relacionais e estruturas de dados relacionais em códigos Python. Tendo não apenas uma **engine** para se conectar em diferentes bancos e **dialects** para conseguir "falar a lingua do banco", mas também ORMs e outras estruturas próprias para interação com as entidades presentes nos bancos de dados.
+
+Com isso podemos criar entidades e lidar com tabelas, fazendo consultas, adicionando registros, alterando registros ou os removendo. Tudo isso usando a ideia de sessões para controlar o ciclo de vida de comunicação com o banco e usando commits ou rollbacks para controlar as alterações feitas no banco.
+
+Sendo assim, podemos entender essa solução como uma das mais completas para fazermos estruturas completas com o banco de dados, sendo útil em qualquer projeto que não usa dados em memória.
+
+O SQL Alchemy é usado pelo SQL Model.
