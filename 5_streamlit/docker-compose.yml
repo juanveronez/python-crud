@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    networks:
+      - mynetwork
+    ports:
+      - 5430:5432
+
+networks:
+  mynetwork:
+
+volumes:
+  postgres_data:
