@@ -34,11 +34,11 @@ with st.expander("Adicionar um Novo Produto"):
         name = st.text_input("Nome do Produto")
         description = st.text_area("Descrição do Produto")
         price = st.number_input("Preço", min_value=0.01, format="%f")
-        categoria = st.selectbox(
+        category = st.selectbox(
             "Categoria",
             ["Eletrônico", "Eletrodoméstico", "Móveis", "Roupas", "Calçados"],
         )
-        email_fornecedor = st.text_input("Email do Fornecedor")
+        email_supplier = st.text_input("Email do Fornecedor")
         submit_button = st.form_submit_button("Adicionar Produto")
 
         if submit_button:
@@ -48,8 +48,8 @@ with st.expander("Adicionar um Novo Produto"):
                     "name": name,
                     "description": description,
                     "price": price,
-                    "categoria": categoria,
-                    "email_fornecedor": email_fornecedor,
+                    "category": category,
+                    "email_supplier": email_supplier,
                 },
             )
             show_response_message(response)
@@ -67,8 +67,8 @@ with st.expander("Visualizar Produtos"):
                     "name",
                     "description",
                     "price",
-                    "categoria",
-                    "email_fornecedor",
+                    "category",
+                    "email_supplier",
                     "created_at",
                 ]
             ]
@@ -93,8 +93,8 @@ with st.expander("Obter Detalhes de um Produto"):
                     "name",
                     "description",
                     "price",
-                    "categoria",
-                    "email_fornecedor",
+                    "category",
+                    "email_supplier",
                     "created_at",
                 ]
             ]
@@ -122,7 +122,7 @@ with st.expander("Atualizar Produto"):
             min_value=0.01,
             format="%f",
         )
-        new_categoria = st.selectbox(
+        new_category = st.selectbox(
             "Nova Categoria",
             ["Eletrônico", "Eletrodoméstico", "Móveis", "Roupas", "Calçados"],
         )
@@ -139,9 +139,9 @@ with st.expander("Atualizar Produto"):
             if new_price > 0:
                 update_data["price"] = new_price
             if new_email:
-                update_data["email_fornecedor"] = new_email
-            if new_categoria:
-                update_data["categoria"] = new_categoria
+                update_data["email_supplier"] = new_email
+            if new_category:
+                update_data["category"] = new_category
 
             if update_data:
                 response = requests.put(
