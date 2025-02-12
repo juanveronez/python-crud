@@ -9,7 +9,7 @@ services:
     networks:
       - mynetwork
     ports:
-      - 5430:5432
+      - ${POSTGRES_PORT}:5432
 
 networks:
   mynetwork:
