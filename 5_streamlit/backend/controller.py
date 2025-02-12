@@ -26,7 +26,7 @@ def update_product(db: Session, product_id: int, product: ProductUpdate):
 
     for k, v in product.model_dump().items():
         if v is not None:
-            db_product[k] = v
+            setattr(db_product, k, v)
     
     db.commit()
     db.refresh(db_product)

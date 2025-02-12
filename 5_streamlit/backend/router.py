@@ -9,6 +9,9 @@ router = APIRouter(prefix='/products')
 
 @router.get('/', response_model=list[Product])
 def get_products(db: Session = Depends(get_db)):
+    """
+    Get all products from database
+    """
     return controller.get_products(db)
 
 @router.get('/{id}', response_model=Product)

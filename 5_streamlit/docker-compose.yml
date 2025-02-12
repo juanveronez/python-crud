@@ -8,8 +8,21 @@ services:
       - .env
     networks:
       - mynetwork
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend:/app
+    env_file:
+      - .env
     ports:
-      - ${POSTGRES_PORT}:5432
+      - "8000:8000"
+    depends_on:
+      - postgres
+    networks:
+      - mynetwork
 
 networks:
   mynetwork:
